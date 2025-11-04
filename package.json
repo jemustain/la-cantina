@@ -1,0 +1,16 @@
+{
+  "name": "la-cantina",
+  "version": "1.0.0",
+  "description": "Landing page for GHC conference technology project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["ghc", "conference", "landing-page"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

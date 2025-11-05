@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Cantina - GHC 2025</title>
+    <title>DocuGen AI - API Documentation Generator | GHC 2025</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="logo">La Cantina</div>
+                <div class="logo">📚 DocuGen AI</div>
                 <ul class="nav-links">
+                    <li><a href="#tool">Try It</a></li>
+                    <li><a href="#examples">Examples</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -23,70 +26,124 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Welcome to La Cantina</h1>
-                <p class="tagline">GHC 2025 Conference Technology Project</p>
-                <p class="subtitle">Empowering innovation and connection in technology</p>
-                <button class="cta-button">Learn More</button>
+                <h1>AI-Powered API Documentation Generator</h1>
+                <p class="tagline">Transform Your Code into Beautiful Documentation</p>
+                <p class="subtitle">Paste your code, get professional API docs in seconds ⚡</p>
+                <a href="#tool" class="cta-button">Start Documenting</a>
+            </div>
+        </section>
+
+        <section id="tool" class="doc-generator">
+            <div class="container">
+                <h2>Generate Documentation</h2>
+                
+                <div class="split-view">
+                    <!-- BEFORE: Code Input -->
+                    <div class="panel input-panel">
+                        <div class="panel-header">
+                            <h3>📝 Before: Your Code</h3>
+                            <div class="controls">
+                                <select id="languageSelect" class="language-select">
+                                    <option value="javascript">JavaScript</option>
+                                    <option value="python">Python</option>
+                                    <option value="java">Java</option>
+                                    <option value="typescript">TypeScript</option>
+                                    <option value="go">Go</option>
+                                    <option value="rust">Rust</option>
+                                    <option value="csharp">C#</option>
+                                </select>
+                                <button class="btn-secondary" onclick="loadExample()">Load Example</button>
+                                <button class="btn-secondary" onclick="clearInput()">Clear</button>
+                            </div>
+                        </div>
+                        <textarea 
+                            id="codeInput" 
+                            class="code-input" 
+                            placeholder="Paste your code here...&#10;&#10;Example:&#10;function calculateTotal(items, taxRate) {&#10;  const subtotal = items.reduce((sum, item) => sum + item.price, 0);&#10;  return subtotal * (1 + taxRate);&#10;}"
+                        ></textarea>
+                        <button class="btn-primary" onclick="generateDocs()" id="generateBtn">
+                            ✨ Generate Documentation
+                        </button>
+                    </div>
+
+                    <!-- AFTER: Documentation Output -->
+                    <div class="panel output-panel">
+                        <div class="panel-header">
+                            <h3>✅ After: Generated Documentation</h3>
+                            <div class="controls">
+                                <button class="btn-secondary" onclick="copyToClipboard()" id="copyBtn" style="display:none;">
+                                    📋 Copy
+                                </button>
+                                <button class="btn-secondary" onclick="downloadDocs()" id="downloadBtn" style="display:none;">
+                                    � Download
+                                </button>
+                            </div>
+                        </div>
+                        <div id="output" class="output-content">
+                            <div class="placeholder">
+                                <div class="placeholder-icon">📚</div>
+                                <h3>Your documentation will appear here</h3>
+                                <p>Paste your code and click "Generate Documentation" to see the magic ✨</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="examples" class="examples">
+            <div class="container">
+                <h2>What You Get</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">📖</div>
+                        <h3>Complete API Docs</h3>
+                        <p>Function descriptions, parameters, return values, and error handling</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>Code Examples</h3>
+                        <p>Real, working usage examples for every function</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Results</h3>
+                        <p>AI-powered generation in seconds, not hours</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Beautiful Markdown</h3>
+                        <p>Professional formatting ready for GitHub, Notion, or anywhere</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
-                <h2>About Our Project</h2>
-                <p>La Cantina is dedicated to supporting the Grace Hopper Celebration (GHC) 2025, 
-                   the world's largest gathering of women and non-binary technologists. Our platform 
-                   connects attendees, facilitates networking, and enhances the conference experience.</p>
+                <h2>About This Project</h2>
+                <p>Built for GHC 2025, DocuGen AI uses Google Gemini AI to automatically generate comprehensive API documentation from your source code. Save hours of manual documentation writing and maintain consistency across your projects.</p>
                 
-                <div class="features">
-                    <div class="feature-card">
-                        <h3>🤝 Networking</h3>
-                        <p>Connect with fellow attendees and industry leaders</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>📅 Event Management</h3>
-                        <p>Stay organized with session schedules and reminders</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>💡 Resources</h3>
-                        <p>Access conference materials and learning resources</p>
+                <div class="tech-stack">
+                    <h3>Built With</h3>
+                    <div class="tech-badges">
+                        <span class="badge">Node.js</span>
+                        <span class="badge">Express</span>
+                        <span class="badge">Google Gemini AI</span>
+                        <span class="badge">Highlight.js</span>
+                        <span class="badge">Marked.js</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="schedule" class="schedule">
-            <div class="container">
-                <h2>Conference Highlights</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Day 1: Keynotes</h3>
-                        <p>Opening ceremonies and inspiring talks from industry leaders</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Day 2: Workshops</h3>
-                        <p>Hands-on technical workshops and skill-building sessions</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Day 3: Networking</h3>
-                        <p>Career fair, networking events, and celebration</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Get In Touch</h2>
-                <p>Have questions? We'd love to hear from you!</p>
-                <button class="cta-button">Contact Us</button>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 La Cantina - GHC Conference Project. All rights reserved.</p>
+            <p>⚡ Powered by Google Gemini AI | Built at GHC 2025</p>
         </div>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>

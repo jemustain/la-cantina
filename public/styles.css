@@ -527,3 +527,169 @@ footer {
         margin: 1rem;
     }
 }
+
+/* Proposals Page Styles */
+.nav-links a.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 4px;
+}
+
+.proposals-section {
+    padding: 60px 0;
+    background: var(--bg-light);
+}
+
+.proposal-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proposal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
+}
+
+.proposal-number {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    writing-mode: horizontal-tb;
+}
+
+.proposal-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.proposal-content h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.proposal-type {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hook {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    padding: 1rem;
+    border-left: 4px solid var(--primary);
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.hook strong {
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.description {
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.proposal-details {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    align-items: baseline;
+}
+
+.detail-label {
+    color: var(--primary);
+    font-weight: 600;
+    min-width: 140px;
+    font-size: 0.95rem;
+}
+
+.detail-item span:last-child {
+    color: var(--text-light);
+    flex: 1;
+}
+
+.cta-section {
+    padding: 80px 0;
+    background: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.cta-button.secondary:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Responsive for Proposals */
+@media (max-width: 768px) {
+    .proposal-card {
+        flex-direction: column;
+    }
+    
+    .proposal-number {
+        min-width: auto;
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+    
+    .proposal-content {
+        padding: 1.5rem;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .detail-label {
+        min-width: auto;
+    }
+}

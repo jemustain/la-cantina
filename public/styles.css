@@ -607,6 +607,51 @@ footer {
     font-size: 1.05rem;
 }
 
+.agenda-section,
+.learning-objectives {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.agenda-section h3,
+.learning-objectives h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.agenda-section ul,
+.learning-objectives ul {
+    margin-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.agenda-section li,
+.learning-objectives li {
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+
+.agenda-section li strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.agenda-section ul ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.agenda-section ul ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
 .proposal-details {
     border-top: 1px solid var(--border);
     padding-top: 1.5rem;

@@ -20,6 +20,10 @@
       "dest": "/public/app.js"
     },
     {
+      "src": "/proposals.html",
+      "dest": "/public/proposals.html"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "server.js"
     },

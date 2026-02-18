@@ -100,6 +100,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Route for proposals page
+app.get('/proposals.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'proposals.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
   console.log(`📚 API Documentation Generator ready!`);
